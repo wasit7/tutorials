@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script>
+d3.selection.prototype.maybe_first = function() {
+  return d3.select(this[0][0]);
+};
+d3.selection.prototype.last = function() {
+  var last = this.size() - 1;
+  return d3.select(this[0][last]);
+};
+</script>
+</head>
+<body>
+
+<h1>Enter and exit</h1>
+<script>
+var paragraphs=d3.select("body").selectAll("p")
+    .data([4, 8, 15, 16, 23, 42]);
+  
+
+paragraphs.enter().append("p").text(function(d) { return "I’m number " + d + "!"; });
+
+//d3.select("body").selectAll("p").last().append("p").text("The end of paragraphs.");
+//d3.select("body").selectAll("p").maybe_first().insert("p").text("The first paragraph.");
+
+paragraphs.exit().remove();
+</script>
+</body>
+</html>

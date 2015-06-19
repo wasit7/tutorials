@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<h1 id="my_title">This is a Heading</h1>
+<p>This is a paragraph.</p>
+<p>Another paragraph.</p>
+<p>Hello D3!</p>
+<script>
+	d3.selectAll("p").style("color", function(d, i) {
+  		return i % 2 ? "#fff" : "#00e";
+	});
+	d3.select("body").style("background-color", "black");
+	d3.select("#my_title").style("color", "blue");
+	d3.selectAll("p")
+    .data([4, 8])
+    .style("font-size", function(d) { return d + "px"; });
+    console.log(d3.selectAll("p").data());
+</script>
+</body>
+</html>
