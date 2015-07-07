@@ -19,10 +19,11 @@ for i in xrange(10):
     except:
        print "port COM%d is disabled"%(i+1)
 print "Connecting to port: "+ser.name 
-endTime = datetime.datetime.now() + datetime.timedelta(seconds=60)
+endTime = datetime.datetime.now() + datetime.timedelta(seconds=5)
 while True:
     if datetime.datetime.now() >= endTime:
         break
-    m = re.match(r"(?P<tag>\w+) (?P<value>\w+)",ser.readline())
-    print m.group('tag')+'\t'+m.group('value')
+    record=re.split(',',ser.readline())
+    record = map(int, record)
+    print record
 ser.close()   
