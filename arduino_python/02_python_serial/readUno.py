@@ -26,4 +26,4 @@ while True:
     record=re.split(',',ser.readline())
     record = map(int, record)
     print record
-ser.close()   
+ser.close()
