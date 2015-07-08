@@ -2,7 +2,7 @@ unsigned long time;
 int analogPin = 3;     // potentiometer wiper (middle terminal) connected to analog pin 3
 int v1 = 0;           // outside leads to ground and +5V                 
 void setup(){
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 void loop(){
   
