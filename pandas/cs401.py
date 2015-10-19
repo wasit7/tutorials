@@ -21,7 +21,7 @@ advisors['normal']=np.zeros(len(advisors['name']))
 advisors['special']=np.zeros(len(advisors['name']))
 matching={}
 for record in df.values:
-    for student_id in record[1:3]:
+    for student_id in record[1:4]:
         #if id is not Nan
         if student_id==student_id:
             #if special sudent

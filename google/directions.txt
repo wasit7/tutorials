@@ -1,0 +1,451 @@
+﻿[
+    {
+        "bounds": {
+            "northeast": {
+                "lat": 14.074877,
+                "lng": 100.6206441
+            },
+            "southwest": {
+                "lat": 13.9896336,
+                "lng": 100.606052
+            }
+        },
+        "copyrights": "Map data \u00a92015 Google",
+        "legs": [
+            {
+                "distance": {
+                    "text": "11.9 km",
+                    "value": 11928
+                },
+                "duration": {
+                    "text": "19 mins",
+                    "value": 1156
+                },
+                "end_address": "iStudio @ Future Park Rangsit \u0e15\u0e33\u0e1a\u0e25 \u0e1b\u0e23\u0e30\u0e0a\u0e32\u0e18\u0e34\u0e1b\u0e31\u0e15\u0e22\u0e4c \u0e2d\u0e33\u0e40\u0e20\u0e2d \u0e18\u0e31\u0e0d\u0e1a\u0e38\u0e23\u0e35 \u0e1b\u0e17\u0e38\u0e21\u0e18\u0e32\u0e19\u0e35 12130, Thailand",
+                "end_location": {
+                    "lat": 13.9896336,
+                    "lng": 100.6188324
+                },
+                "start_address": "Department of Computer Science TU, Klong Luang, Khlong Luang District, Pathum Thani 12121, Thailand",
+                "start_location": {
+                    "lat": 14.0737868,
+                    "lng": 100.6062678
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "73 m",
+                            "value": 73
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 17
+                        },
+                        "end_location": {
+                            "lat": 14.0742003,
+                            "lng": 100.6062652
+                        },
+                        "html_instructions": "Head <b>west</b>",
+                        "polyline": {
+                            "points": "ex{tAet`eR?@?B?B?BABA@ABABA@ABC@A@C@C@C?C@C?C?C?C?CAAAC?CAACCAAAACAAACAC?CAC?G"
+                        },
+                        "start_location": {
+                            "lat": 14.0737868,
+                            "lng": 100.6062678
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "74 m",
+                            "value": 74
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 17
+                        },
+                        "end_location": {
+                            "lat": 14.0748665,
+                            "lng": 100.6062535
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "wz{tAet`eReCB"
+                        },
+                        "start_location": {
+                            "lat": 14.0742003,
+                            "lng": 100.6062652
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.4 km",
+                            "value": 421
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 82
+                        },
+                        "end_location": {
+                            "lat": 14.0748747,
+                            "lng": 100.6101534
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "}~{tAat`eRAaG@{@?}@?mCAmC?y@@y@"
+                        },
+                        "start_location": {
+                            "lat": 14.0748665,
+                            "lng": 100.6062535
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.8 km",
+                            "value": 832
+                        },
+                        "duration": {
+                            "text": "2 mins",
+                            "value": 144
+                        },
+                        "end_location": {
+                            "lat": 14.0673948,
+                            "lng": 100.60992
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "}~{tAmlaeRrEDtEFz@@|@?xDBzDB|GJ~GH"
+                        },
+                        "start_location": {
+                            "lat": 14.0748747,
+                            "lng": 100.6101534
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "74 m",
+                            "value": 74
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 17
+                        },
+                        "end_location": {
+                            "lat": 14.0668497,
+                            "lng": 100.6101198
+                        },
+                        "html_instructions": "Turn <b>left</b> toward <b>Route 3214</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "epztA_kaeR@M@E@EBCBCBABABAB?@?jA?"
+                        },
+                        "start_location": {
+                            "lat": 14.0673948,
+                            "lng": 100.60992
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "5 m",
+                            "value": 5
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 3
+                        },
+                        "end_location": {
+                            "lat": 14.0668504,
+                            "lng": 100.6100703
+                        },
+                        "html_instructions": "Turn <b>right</b> toward <b>Route 3214</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "ylztAglaeR?H"
+                        },
+                        "start_location": {
+                            "lat": 14.0668497,
+                            "lng": 100.6101198
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 km",
+                            "value": 153
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 37
+                        },
+                        "end_location": {
+                            "lat": 14.0654735,
+                            "lng": 100.610039
+                        },
+                        "html_instructions": "Turn <b>left</b> toward <b>Route 3214</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "ylztA}kaeRlCBL?L?hB@"
+                        },
+                        "start_location": {
+                            "lat": 14.0668504,
+                            "lng": 100.6100703
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "89 m",
+                            "value": 89
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 14
+                        },
+                        "end_location": {
+                            "lat": 14.0653162,
+                            "lng": 100.6108025
+                        },
+                        "html_instructions": "Turn <b>left</b> toward <b>Route 3214</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "edztAwkaeR?G@iBBMJOFEBA"
+                        },
+                        "start_location": {
+                            "lat": 14.0654735,
+                            "lng": 100.610039
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.9 km",
+                            "value": 911
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 67
+                        },
+                        "end_location": {
+                            "lat": 14.0637156,
+                            "lng": 100.6187729
+                        },
+                        "html_instructions": "Slight <b>left</b> onto <b>Route 3214</b>",
+                        "maneuver": "turn-slight-left",
+                        "polyline": {
+                            "points": "gcztAopaeR@mA@c@?wB?g@?K?_@?g@?g@?o@@cABMBKDeBB]J_@Pi@N[R]Zc@VUBE`@c@Z]\\a@?AFKDINWDOPi@DQ?CBKDU@Q@Q@[?g@?Q?E@[?C?]?C@[?A?q@@cA?yB"
+                        },
+                        "start_location": {
+                            "lat": 14.0653162,
+                            "lng": 100.6108025
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.6 km",
+                            "value": 595
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 72
+                        },
+                        "end_location": {
+                            "lat": 14.0648643,
+                            "lng": 100.6176102
+                        },
+                        "html_instructions": "Take the ramp to <b>Route 1/Bangkok</b>",
+                        "polyline": {
+                            "points": "gyytAibceRE_@Ce@CYCYE_@EMCSGSK_@ISKUISCGACCEMQCEA?IIIIMEMCM?S@OBOHIJA@ABABEJCH?J?b@@D?@@lD?`A@f@Bj@@fAAd@?T@D?B@BBDHL"
+                        },
+                        "start_location": {
+                            "lat": 14.0637156,
+                            "lng": 100.6187729
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.9 km",
+                            "value": 934
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 81
+                        },
+                        "end_location": {
+                            "lat": 14.0564737,
+                            "lng": 100.6172559
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>\u0e17\u0e32\u0e07\u0e04\u0e39\u0e48\u0e02\u0e19\u0e32\u0e19 \u0e16\u0e19\u0e19 \u0e1e\u0e2b\u0e25\u0e42\u0e22\u0e18\u0e34\u0e19</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "k`ztAa{beRX@Z@|BDl@?F?P@N?H?F?dA@H?H@j@?d@@fBBnDD@?bEFP@b@?`A@tADJ?`BB~ABfAB`@BV@R@V@dC@T?"
+                        },
+                        "start_location": {
+                            "lat": 14.0648643,
+                            "lng": 100.6176102
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "6.2 km",
+                            "value": 6236
+                        },
+                        "duration": {
+                            "text": "5 mins",
+                            "value": 314
+                        },
+                        "end_location": {
+                            "lat": 14.0004634,
+                            "lng": 100.6150113
+                        },
+                        "html_instructions": "Merge onto <b>Route 1</b> via the ramp on the <b>right</b> to <b>Rangsit/Bangkok</b>",
+                        "polyline": {
+                            "points": "}kxtA{xbeRJDFBB?D@~@BTBFDFDR@T?\\@\\?pDDnDDj@Bh@@lRVvDD~DFpHJ\\?tGLH?h@@r@@~AD`BBb@?b@@hEHfFHfHHr@@vJNz@@~CD`QTV@fA@X@zDDdGJbLPxOV\\?d@@f@@nA@~BBl@@zADzGH|MNnBBbB@~@BlA@~BBjA@jEDnGFrBBfIFR?|HJrEJB?t@BrHL~@?x@?nB@~DDH?dJLbCBf@?fDDzBBnCBb@@J?"
+                        },
+                        "start_location": {
+                            "lat": 14.0564737,
+                            "lng": 100.6172559
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "30 m",
+                            "value": 30
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 6
+                        },
+                        "end_location": {
+                            "lat": 14.000265,
+                            "lng": 100.6151965
+                        },
+                        "html_instructions": "Slight <b>left</b> toward <b>\u0e17\u0e32\u0e07\u0e04\u0e39\u0e48\u0e02\u0e19\u0e32\u0e19 \u0e16\u0e19\u0e19 \u0e1e\u0e2b\u0e25\u0e42\u0e22\u0e18\u0e34\u0e19</b> (signs for <b>Exit 33</b>)",
+                        "maneuver": "turn-slight-left",
+                        "polyline": {
+                            "points": "{mmtAyjbeRf@e@"
+                        },
+                        "start_location": {
+                            "lat": 14.0004634,
+                            "lng": 100.6150113
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.5 km",
+                            "value": 515
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 46
+                        },
+                        "end_location": {
+                            "lat": 13.9956355,
+                            "lng": 100.6150111
+                        },
+                        "html_instructions": "Slight <b>right</b> onto <b>\u0e17\u0e32\u0e07\u0e04\u0e39\u0e48\u0e02\u0e19\u0e32\u0e19 \u0e16\u0e19\u0e19 \u0e1e\u0e2b\u0e25\u0e42\u0e22\u0e18\u0e34\u0e19</b>",
+                        "maneuver": "turn-slight-right",
+                        "polyline": {
+                            "points": "slmtA_lbeRtDF^@`@?`CD`CDrADtADnB@zA?P@V?"
+                        },
+                        "start_location": {
+                            "lat": 14.000265,
+                            "lng": 100.6151965
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "89 m",
+                            "value": 89
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 13
+                        },
+                        "end_location": {
+                            "lat": 13.9949226,
+                            "lng": 100.6153614
+                        },
+                        "html_instructions": "Slight <b>left</b>",
+                        "maneuver": "turn-slight-left",
+                        "polyline": {
+                            "points": "woltAyjbeRPQBAZIREHAPEPIZO"
+                        },
+                        "start_location": {
+                            "lat": 13.9956355,
+                            "lng": 100.6150111
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.3 km",
+                            "value": 264
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 34
+                        },
+                        "end_location": {
+                            "lat": 13.9947645,
+                            "lng": 100.6177987
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "gkltA_mbeRPaHLeE"
+                        },
+                        "start_location": {
+                            "lat": 13.9949226,
+                            "lng": 100.6153614
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.6 km",
+                            "value": 633
+                        },
+                        "duration": {
+                            "text": "3 mins",
+                            "value": 192
+                        },
+                        "end_location": {
+                            "lat": 13.9896336,
+                            "lng": 100.6188324
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "gjltAg|beRfHp@T@V@f@?~CGxAAF?F?B?B?B?B?H?F?L?J?P?N?R?P?J?J?BANQtCkDr@y@"
+                        },
+                        "start_location": {
+                            "lat": 13.9947645,
+                            "lng": 100.6177987
+                        },
+                        "travel_mode": "DRIVING"
+                    }
+                ],
+                "via_waypoint": []
+            }
+        ],
+        "overview_polyline": {
+            "points": "ex{tAet`eR?LGLIHODO?MEIKEMAKeCBAaG@yBA{G@sBhLLnNH|PTBSLOLCjA??HzCBvB@@qBN]JGBqG?{B@sBFYDeBB]\\iAb@y@r@y@~AiB\\o@\\oAHa@Bc@@{ADuE?yBE_@G_AIy@Ia@]gA[u@W]IIWO[Cc@D[VM\\@v@@nFDrA?bCFRHLX@xCFvA@`B@jQVfEFjHNhEFT?JDJBdAD\\HFDR@r@@jLNn_@f@n[f@hg@r@`Y^|m@~@dHHvJNlQRpJJzSRzIFpOVx@BrJLrJFxTVzHHf@e@tDF`A@lLVtFBTSn@Ol@QZOPaHLeEfHp@l@BfEGlBAT?tB?NAdD}Dr@y@"
+        },
+        "summary": "Route 1",
+        "warnings": [],
+        "waypoint_order": []
+    }
+]
