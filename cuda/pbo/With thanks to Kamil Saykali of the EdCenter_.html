@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="Microsoft Word 97/98">
+<TITLE>With thanks to Kamil Saykali of the EdCenter:</TITLE>
+</HEAD>
+<BODY>
+
+<FONT FACE="Courier" SIZE=2><P>With thanks to Kamil Saykali of the EdCenter:</P>
+
+<P>This part will show how to install the glut libraries and dll's (to download it go to http://reality.sgi.com/opengl/glut3/glut3.html )</P>
+
+<P>1. After you have downloaded the glut.zip file (you should get the latest ver 3.7) unzip it into a folder</P>
+<P>2. Inside the folder you should have:</P>
+<P>    glut.dll</P>
+<P>    glut32.dll</P>
+<P>    glut.h</P>
+<P>    glut.lib</P>
+<P>    glut32.lib</P>
+<P>3. Copy both glut.dll and glut32.dll into your windows directory (windows or winnt, depends on if you are using Windows95/98 or Windows NT)</P>
+<P>4. Copy your glut.h to:</P>
+<P>    &lt;drive&gt;:\&lt;VC++ path&gt;\include\GL\glut.h</P>
+<P>   *** put the drive where you installed VC++ instead of the &lt;drive&gt; ***</P>
+<P>   *** put the directory where you installed VC++ instead of the &lt;VC++ path&gt;</P>
+<P>5. Copy your glut.lib and glut32.lib to:</P>
+<P>   &lt;drive&gt;:\&lt;VC++ path&gt;\lib\glut.lib</P>
+<P>   &lt;drive&gt;:\&lt;VC++ path&gt;\lib\glut32.lib</P>
+<P>   *** put the drive where you installed VC++ instead of the &lt;drive&gt; ***</P>
+<P>   *** put the directory where you installed VC++ instead of the &lt;VC++ path&gt;</P>
+<P>6. That should be it for installed the glut libraries.  The rest of this letter shows you how to setup VC++ so that you can use the glut libraries.</P>
+
+<P>This will show you how to start up an opengl project and setup the setting so that you will be able to compile and run the program.  This is assuming that you have already downloaded the appropriate files and installed them in the directories that there documentation tell you to.  If you have not done that you need to do it before you can run or write an opengl program.</P>
+
+<P>1.  Start VC++ and create a new project.</P>
+<P>2.  The project has to be a "Win32 Console Application"</P>
+<P>3.  Type in the name of the project and where it will be on your hard drive.</P>
+<P>4.  Chose an empty project and click next or finish</P>
+<P>5.  First thing you need to do when the project opens up is to click on the "Project" menu item from the top.</P>
+<P>6.  Chose "Settings" (a window will come up)</P>
+<P>7.  On the left side of the window there are tabs, chose the "Link" tab</P>
+<P>8.  The string field labeled "Object/library modules" has a few lib files already set in it</P>
+<P>9.  Go to the end of this string field and enter:</P>
+<P>    opengl32.lib glut32.lib glu32.lib</P>
+<P>10. Chose "OK" and that will include all the opengl libraries that you need</P>
+<P>11. Now all you need to do is include &lt;gl\glut.h&gt; and you are ready to go</P>
+</FONT><FONT FACE="Times" SIZE=2></FONT></BODY>
+</HTML>

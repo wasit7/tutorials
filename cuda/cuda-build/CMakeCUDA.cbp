@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="CMakeCUDA" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="msvc8" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 all" />
+            <CompileFile command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+            <DistClean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 edit_cache" />
+            <CompileFile command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+            <DistClean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 rebuild_cache" />
+            <CompileFile command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+            <DistClean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="CMakeCUDA">
+         <Option output="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build/CMakeCUDA.exe" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="msvc8" />
+         <Compiler>
+            <Add directory="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v7.5/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 CMakeCUDA" />
+            <CompileFile command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+            <DistClean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="CMakeCUDA/fast">
+         <Option output="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build/CMakeCUDA.exe" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda-build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="msvc8" />
+         <Compiler>
+            <Add directory="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v7.5/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 CMakeCUDA/fast" />
+            <CompileFile command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+            <DistClean command="nmake /NOLOGO /f C:\Users\Wasit\Documents\GitHub\tutorials\cuda\cuda-build\Makefile VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda/cuda.cu">
+         <Option target="CMakeCUDA"/>
+      </Unit>
+      <Unit filename="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda/main.cpp">
+         <Option target="CMakeCUDA"/>
+      </Unit>
+      <Unit filename="C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
