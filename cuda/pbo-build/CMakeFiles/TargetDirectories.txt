@@ -1,3 +1,0 @@
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/pbo-build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/pbo-build/CMakeFiles/pbo.dir
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/pbo-build/CMakeFiles/ZERO_CHECK.dir

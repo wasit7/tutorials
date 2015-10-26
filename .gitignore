@@ -58,3 +58,6 @@ target/
 
 #API key
 *.key
+
+#cmake
+/cuda/build/

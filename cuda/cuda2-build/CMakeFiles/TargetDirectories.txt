@@ -1,1 +1,0 @@
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cuda2-build/CMakeFiles/cuda2.dir
