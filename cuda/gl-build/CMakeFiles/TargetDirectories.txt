@@ -1,0 +1,1 @@
+C:/Users/Wasit/Documents/GitHub/tutorials/cuda/gl-build/CMakeFiles/MyTex.dir
