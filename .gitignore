@@ -60,4 +60,4 @@ target/
 *.key
 
 #cmake
-/cuda/build/
+**-build/
