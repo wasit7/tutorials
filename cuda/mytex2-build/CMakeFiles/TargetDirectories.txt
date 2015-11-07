@@ -1,1 +1,0 @@
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/mytex2-build/CMakeFiles/mytex2.dir
