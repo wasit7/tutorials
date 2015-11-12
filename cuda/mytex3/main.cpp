@@ -31,7 +31,7 @@ float cameraAngleY;
 float cameraDistance;
 
 extern "C"
-void device_render(uchar4 *d_output, uint width, uint height);
+void device_render(int time,uchar4 *d_output, uint width, uint height);
 void checkCudaErrors(cudaError_t e){
     if (e) throw std::runtime_error(cudaGetErrorString(e));
 }
@@ -103,12 +103,12 @@ void render(){
     h_output=(uchar4*)malloc(num_bytes);
     // call CUDA kernel, writing results to PBO
     //renderAtlasImage(windowGridSize, windowBlockSize, d_output, windowSize.x, windowSize.y, lod);
-    device_render(d_output,windowSize.x,windowSize.y);
+    device_render( glutGet(GLUT_ELAPSED_TIME),d_output,windowSize.x,windowSize.y);
 
     checkCudaErrors(cudaGraphicsUnmapResources(1, &cuda_pbo_resource, 0));
 
-    cudaMemcpy(h_output,d_output,num_bytes,cudaMemcpyDeviceToHost);
-    printf("h_output[%d]:%d %d %d %d\n",i,h_output[i].x,h_output[i].y,h_output[i].z,h_output[i].w);
+    //cudaMemcpy(h_output,d_output,num_bytes,cudaMemcpyDeviceToHost);
+    //printf("h_output[%d]:%d %d %d %d\n",i,h_output[i].x,h_output[i].y,h_output[i].z,h_output[i].w);
     //i++;
 }
 
@@ -140,6 +140,7 @@ void displayCB()
         ti=glutGet(GLUT_ELAPSED_TIME);
         nf=0;
     }else nf++;
+
 }
 void idleCB(){
     glutPostRedisplay();
