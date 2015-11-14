@@ -1,6 +1,5 @@
 #include "opencv2/opencv.hpp"
-//#pragma comment(lib, "vfw32.lib")
-//#pragma comment( lib, "comctl32.lib" )
+#include <stdio.h>
 using namespace cv;
 
 int main(int, char**)
@@ -15,11 +14,12 @@ int main(int, char**)
     {
         Mat frame;
         cap >> frame; // get a new frame from camera
-        cvtColor(frame, edges, CV_BGR2GRAY);
-        GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
-        Canny(edges, edges, 0, 30, 3);
-        imshow("edges", edges);
+        //cvtColor(frame, edges, CV_BGR2GRAY);
+        //GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
+        //Canny(edges, edges, 0, 30, 3);
+        imshow("edges", frame);
         if(waitKey(30) >= 0) break;
+        printf("w=%d, h=%d\n",frame.size().width,frame.size().height);
     }
     // the camera will be deinitialized automatically in VideoCapture destructor
     return 0;

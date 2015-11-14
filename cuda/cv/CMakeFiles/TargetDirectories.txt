@@ -1,3 +1,0 @@
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cv/CMakeFiles/mycv.dir
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cv/CMakeFiles/ALL_BUILD.dir
-C:/Users/Wasit/Documents/GitHub/tutorials/cuda/cv/CMakeFiles/ZERO_CHECK.dir
