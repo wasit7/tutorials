@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(mycv2)
+project(mycv3)
 set(CMAKE_PREFIX_PATH 
 	"C:/openGL/freeglut/include"
 	"C:/openGL/glew-1.9.0/include"
@@ -35,7 +35,7 @@ set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_30,code=sm_30)
 set(SRCS
         main.cpp
         )
-cuda_add_executable(mycv2 ${SRCS})
+cuda_add_executable(mycv3 ${SRCS})
 
 message(cuda_toolkit= ${CUDA_TOOLKIT_ROOT_DIR} )
 message(cuda_inc= ${CUDA_INCLUDE_DIRS})
@@ -48,7 +48,7 @@ include_directories(
         ${OpenCV_INCLUDE_DIRS}
 )
 target_link_libraries(
-	mycv2
+	mycv3
 	${GLUT_LIBRARIES}
 	${GLEW_LIBRARIES}
 	${OpenCV_LIBS}
