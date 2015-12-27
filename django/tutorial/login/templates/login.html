@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<title>Login</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta charset="utf-8"/>
+    <meta name="google-signin-client_id" 
+        content="436406630817-gjmeqgfp4es9djkl51sau84i16vvhvdh.apps.googleusercontent.com">
+    <title>Login</title>
 </head>
 <body>
 {{msg}}
-<form method="post" action="{% url 'url_login' %}">
-{% csrf_token %}
+<form method="post" action="{% url '_login' %}">
+    {% csrf_token %}
     username:
     <input type="text" name="username">
     <br>
@@ -15,8 +18,53 @@
     <input type="password" name="password">
     <br>
     <input type="submit" value="sign-in">
-    <input type="hidden" name="state" value="signin">
+    <input type="hidden" name="trigger" value="signin">
 </form>
+<br>
+<a href="{% url 'social:begin' 'google-oauth2' %}?user_email={{ value }}">Login with Google social auth</a>
+<br>
+{% for choice in OauthProvider.name.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+
+        //get id_token
+        var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        var param='access_token=' + id_token +
+        'csrfmiddlewaretoken={{csrf_token}}'
+
+        console.log('URL:' + "{% url 'register_by_access_token' %}";
+        xhr.open('GET', "{% url 'register_by_access_token' %}"+"/google-oauth2/"+param);
+
+        //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          console.log('Signed in as: ' + xhr.responseText);
+        };
+        xhr.send(param);
+    }
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', "{% url '_logout' %}");
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          console.log('Signed in as: ' + xhr.responseText);
+        };
+        xhr.send( '');
+    }
+</script>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<a href="#" onclick="signOut();">Sign out</a>
 
 </body>
 </html>

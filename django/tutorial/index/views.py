@@ -7,5 +7,5 @@ def index(request):
     count=request.session.get('count', 0)
     count= count+1
     request.session['count'] = count
-    print request.session['username']
+    print "user_email: %s"%strategy.session_get('user_email')
     return HttpResponse("count=%d"%count)
