@@ -1,16 +1,21 @@
 > django-admin startproject mysite
 
 
-In /mysite/mysite/settings.py the authentication application must be inside the list. The app is already installed by default.
-	INSTALLED_APPS = (
-	    'django.contrib.admin',
-	    'django.contrib.auth',
-	    'django.contrib.contenttypes',
-	    'django.contrib.sessions',
-	    'django.contrib.messages',
-	    'django.contrib.staticfiles',
-	)
-
-> python manage.py createsuperuser --username=wasit --email=wasit@mysite.com
-> django-admin changepassword wasit
 > python manage.py migrate
+> python manage.py createsuperuser --username=admin
+> python manage.py changepassword admin
+
+> python manage.py startapp my_app
+
+\mysite\urls.py
+from my_app import views
+...
+url(r'^$', views.home, name='home'),
+
+\mysite\my_app\views.py
+from django.http import HttpResponse
+from datetime import datetime
+def home(request):
+    now = datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)
