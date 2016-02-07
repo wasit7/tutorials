@@ -71,7 +71,7 @@ def read():
 	try:
 		db = connectSQL()
 		cursor=db.cursor()
-		cursor.execute ("""select * from weather ORDER BY time DESC""")
+		cursor.execute ("""SELECT * FROM `weather` ORDER BY time DESC LIMIT 0 , 100 ;""")
 		for row in cursor.fetchall ():
 			html+="<tr><td>%s</td><td>%.1f</td><td>%.1f</td><td>%d</tr>"%(row)
 		html+="""</table></body></html>"""

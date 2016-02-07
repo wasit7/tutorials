@@ -3,10 +3,10 @@
 #include <RF24.h>
 #include <SPI.h>
 #include "DHT.h"
-
+#define ISRAINPIN 3
 #define DHTPIN 2
-#define DHTTYPE DHT11   // DHT 11
-//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+//#define DHTTYPE DHT11   // DHT 11
+#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -27,27 +27,30 @@ struct payload_t {                  // Structure of our payload
   unsigned int nodeID;
   float temp;
   float humi;
-  int israin;
+  unsigned int israin;
 };
 
 payload_t payload{this_node,0.0f,0.0f,0};
 void setup(void)
 {
   Serial.begin(9600);
-  Serial.println("Uno DHT11 NRF24L01");
+  Serial.println("Uno DHT22 NRF24L01");
  
   SPI.begin();
   radio.begin();
   network.begin(/*channel*/ 90, /*node address*/ this_node);
 
-  ///DHT11
+  ///DHT
   dht.begin();
+
+  pinMode(ISRAINPIN, INPUT); 
 }
 
 void loop() {
   delay(5000);
   payload.temp = dht.readTemperature();// Read temperature as Celsius (the default)
   payload.humi = dht.readHumidity();
+  payload.israin= digitalRead(ISRAINPIN)==0;  
   if(payload.temp==payload.temp && payload.humi==payload.humi){
     bool ok=0;
     Serial.println("Sending the package!!");
@@ -55,14 +58,14 @@ void loop() {
       network.update();                          // Check the network regularly
       RF24NetworkHeader header(gateway_node);
       ok=network.write(header,&payload,sizeof(payload));
-      Serial.print("  send from: ");
+      Serial.print("send from: ");
       
       Serial.print(payload.nodeID);
-      Serial.print("temp: ");
+      Serial.print(" temp: ");
       Serial.print(payload.temp);
-      Serial.print("humi: ");
+      Serial.print(" humi: ");
       Serial.print(payload.humi);
-      Serial.print("israin: ");
+      Serial.print(" israin: ");
       Serial.print(payload.israin);
       
       Serial.print(" ok:");

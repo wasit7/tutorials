@@ -30,7 +30,7 @@ struct payload_t {                  // Structure of our payload
   unsigned int nodeID;
   float temp;
   float humi;
-  int israin;
+  unsigned int israin;
 };
 payload_t payload;
 
