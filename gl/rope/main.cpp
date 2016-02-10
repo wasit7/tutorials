@@ -4,9 +4,9 @@
 #include <math.h>
 #include "mymath.h"
 #include <stdio.h>
-#define N 10 //number of balls
-#define M 10     //number of ropes
-#define SpringLenght 10.0f
+#define N 100 //number of balls
+#define M 100     //number of ropes
+#define SpringLenght 1.0f
 #define G 980.0f //pixles per second square
 #define LAMBDA 0.8f
 class Spring{
