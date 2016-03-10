@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SciWeather</title>
+        <style>
+          body {
+            font: 10px sans-serif;
+          }
+          .axis path,
+          .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+          }
+
+          .x.axis path {
+            display: none;
+          }
+
+          .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+          }
+        </style>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    </head>
+    <body>
+
+    <script>
+    var mydata;
+    d3.csv("../data.csv", function(error, data) {
+      data.forEach(function(d) {
+        d.time = d3.time.format("%y %m %d %H:%M:%S").parse(d.time);
+        d.temp = +d.temp;
+      });
+      mydata=data;
+    });
+    </script>
+
+    </body>
+</html>

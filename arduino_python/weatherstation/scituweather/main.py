@@ -6,13 +6,14 @@ sys.path.insert(1,
 	)
 '''
 
-from flask import Flask,request
+from flask import Flask,request,Response
 from datetime import datetime
 import pytz
 import random
 import MySQLdb
+from flask import render_template
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 def connectSQL():
 	env = os.getenv('SERVER_SOFTWARE')
 	if (env and env.startswith('Google App Engine/')):
@@ -81,7 +82,27 @@ def read():
 	return (html,
 		200, {'Refresh': '5;'})
 
+@app.route('/data.csv',methods=['GET'])
+def data():
+	global c,tz
+	csv='''datetime,temperature,humidity,israin\n'''
+	try:
+		db = connectSQL()
+		cursor=db.cursor()
+		cursor.execute ("""SELECT * FROM `weather` ORDER BY time DESC LIMIT 0 , 100 ;""")
+		for row in cursor.fetchall ():
+			csv+='''"%s","%.1f","%.1f","%d"\n'''%(
+				"{:%y %m %d %H:%M:%S}".format(row[0]),
+				row[1],row[2],row[3]
+			)
+		db.close()
+	finally:
+		pass
+	return Response(csv,mimetype="text/csv")
 
+@app.route('/graph')
+def graph():
+	return render_template('graph.html', name="Wasit")
 def createTable():
 	c.execute("""create table if not exists weather (
         	time DATETIME NOT NULL PRIMARY KEY, 

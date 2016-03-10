@@ -39,9 +39,4 @@ c.execute(cmd)
 
 db.commit()
 
-c.execute ("""select * from weather""")
-
-for row in c:
-        print (row)
-
-c.close()
+ 	
