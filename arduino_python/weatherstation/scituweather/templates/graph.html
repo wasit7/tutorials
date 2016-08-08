@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<html lang="en">
+<head>
+  <title>Rice Diseases</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <script src="static/jquery.min.js"></script>
+  <script src="static/bootstrap.min.js"></script>
+  <script src="/static/d3.js"></script>
 
-body {
-  font: 10px sans-serif;
-}
+  <style>
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
 
-.x.axis path {
-  display: none;
-}
 
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
 
-</style>
+  .x.axis path {
+    display: none;
+  }
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  </style>
+</head>
+
+
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/forecast">Forecast</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/forecast">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rice Diseases
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/1">Brow Spot Disease</a></li>
+          <li><a href="/2">Blast Disease</a></li>
+          <li><a href="/3">Bacterial Leaf Streak Disease</a></li>
+          <li><a href="/4">Dirty Panicle Disease</a></li>
+          <li><a href="/5">Bacterial Leaf Blight Disease</a></li> 
+        </ul>
+      </li>
+      <li><a href="/graph">Graph</a></li> 
+      <li><a href="/read">Data</a></li> 
+      <li><a href="/contact">Contact</a></li> 
+    </ul>
+  </div>
+</nav>
 <script>
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
 var x = d3.time.scale()
     .range([0, width]);
@@ -86,7 +118,7 @@ d3.csv("../data.csv", type, function(error, data) {
 });
 
 $(document).ready(function() {
-    setInterval("redraw()",4000);
+    setInterval("redraw()",360000);
 });
 function redraw(){
     d3.csv("../data.csv", type, function(error, data) {
