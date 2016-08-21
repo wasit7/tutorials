@@ -61,3 +61,6 @@ target/
 
 #cmake
 **-build/
+
+#private
+_private/

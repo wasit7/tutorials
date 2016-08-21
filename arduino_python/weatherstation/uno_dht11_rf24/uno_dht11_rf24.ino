@@ -47,7 +47,6 @@ void setup(void)
 }
 
 void loop() {
-  delay(5000);
   payload.temp = dht.readTemperature();// Read temperature as Celsius (the default)
   payload.humi = dht.readHumidity();
   payload.israin= digitalRead(ISRAINPIN)==0;  
@@ -72,11 +71,13 @@ void loop() {
       Serial.println(ok);
       delay(1000);
     }while(!ok);
+    delay(300000);
   }
   else{
     Serial.println("Failed to read from DHT sensor!");
     return;
   }
+  
 }
 
 
