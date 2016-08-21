@@ -1,0 +1,22 @@
+﻿removing testing code
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   ../.gitignore
+#	deleted:    weatherstation/Analytic/.ipynb_checkpoints/Analytics-checkpoint.ipynb
+#	deleted:    weatherstation/Analytic/Analytics.ipynb
+#	modified:   weatherstation/scituweather/templates/1.html
+#	modified:   weatherstation/scituweather/templates/2.html
+#	modified:   weatherstation/scituweather/templates/3.html
+#	modified:   weatherstation/scituweather/templates/4.html
+#	modified:   weatherstation/scituweather/templates/5.html
+#	modified:   weatherstation/scituweather/templates/forecast.html
+#	modified:   weatherstation/uno_dht11_rf24/uno_dht11_rf24.ino
+#
+# Untracked files:
+#	weatherstation/scituweather/static/wemos_160821.png
+#
+
