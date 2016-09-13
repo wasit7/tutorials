@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel="stylesheet" href="morris.css">
+	<script src="jquery.min.js"></script>
+	<script src="raphael.min.js"></script>
+	<script src="morris.min.js"></script>
+</head>
+<body>
+	<div id="myfirstchart" style="height: 250px;"></div>
+	<script>
+		$.getJSON("data.json", function(json) {
+		    console.log(json); // this will show the info it in firebug console
+		    new Morris.Area({
+			element: 'myfirstchart',
+			data: json,
+			xkey: 'Year-Month',
+			ykeys: ['IE 8', 'IE 7', 'IE 9', 'FireFox', 'Chrome', 'Safari'],
+			labels: ['IE 8', 'IE 7', 'IE 9', 'FireFox', 'Chrome', 'Safari']
+			});
+		});
+		
+	</script>
+</body>
+</html>

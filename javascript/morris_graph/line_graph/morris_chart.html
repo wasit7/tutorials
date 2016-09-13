@@ -1,0 +1,37 @@
+<html>
+<head>
+	<link rel="stylesheet" href="morris.css">
+	<script src="jquery.min.js"></script>
+	<script src="raphael.min.js"></script>
+	<script src="morris.min.js"></script>
+</head>
+<body>
+	<div id="myfirstchart" style="height: 250px; width: 600px"></div>
+	<script>
+		new Morris.Area({
+		// ID of the element in which to draw the chart.
+		element: 'myfirstchart',
+		// Chart data records -- each entry in this array corresponds to a point on
+		// the chart.
+		data: [
+		{ 'Year-Month':'2003-01' , 'Firefox': '0.22'},
+		{ 'Year-Month':'2003-02' , 'Firefox': '0.20'},
+		{ 'Year-Month':'2003-03' , 'Firefox': '0.19'},
+		{ 'Year-Month':'2003-04' , 'Firefox': '0.19'},
+		{ 'Year-Month':'2003-05' , 'Firefox': '0.20'},
+		{ 'Year-Month':'2003-06' , 'Firefox': '0.21'},
+		{ 'Year-Month':'2003-07' , 'Firefox': '0.21'},
+		{ 'Year-Month':'2003-08' , 'Firefox': '0.22'},
+		{ 'Year-Month':'2003-09' , 'Firefox': '0.22'},
+		],
+		// The name of the data record attribute that contains x-values.
+		xkey: 'Year-Month',
+		// A list of names of data record attributes that contain y-values.
+		ykeys: ['Firefox'],
+		// Labels for the ykeys -- will be displayed when you hover over the
+		// chart.
+		labels: ['Firefox']
+		});
+	</script>
+</body>
+</html>

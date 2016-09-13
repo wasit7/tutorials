@@ -3,8 +3,8 @@
 #include <RF24.h>
 #include <SPI.h>
 #include "DHT.h"
-#define ISRAINPIN 3
-#define DHTPIN 2
+#define ISRAINPIN 20
+#define DHTPIN 21
 //#define DHTTYPE DHT11   // DHT 11
 #define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
@@ -12,7 +12,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 #define mynodeID 7001
 
-RF24 radio(7,8);                    // nRF24L01(+) radio attached using Getting Started board 
+RF24 radio(18,19);                    // nRF24L01(+) radio attached using Getting Started board 
 
 RF24Network network(radio);          // Network uses that radio
 

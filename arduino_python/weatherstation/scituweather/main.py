@@ -66,11 +66,13 @@ def index():
 		finally:
 			pass
 		return render_template('forecast.html', 
-			time=datetime.now(pytz.timezone('Asia/Bangkok')).isoformat(),
-			temp=row_w[1],
-			humi=row_w[2],
-			israin=str(row_w[3]==1),
-			forecast=data)
+				time=datetime.now(pytz.timezone('Asia/Bangkok')).isoformat(),
+				temp=row_w[1],
+				humi=row_w[2],
+				israin=str(row_w[3]==1),
+				forecast=data,
+				debug=json.loads(row_f[1])
+			)
 
 @app.route('/read/',methods=['GET'])
 def read():

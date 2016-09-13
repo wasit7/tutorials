@@ -21,7 +21,7 @@ unsigned long lastConnectionTime = 0;             // last time you connected to 
 const unsigned long postingInterval = 1000L; // delay between updates, in milliseconds
 
 //////////////////nrf24 setting
-RF24 radio(7,8);                // nRF24L01(+) radio attached using Getting Started board 
+RF24 radio(7,8);                // nRF24L01(+) radio attached using Getting Started board (ce,csn)
 RF24Network network(radio);      // Network uses that radio
 const uint16_t this_node = 00;    // Address of our node in Octal format ( 04,031, etc)
 const uint16_t other_node = 01;   // Address of the other node in Octal format
@@ -152,8 +152,7 @@ void httpRequest(payload_t& payload) {
     Serial.println("connecting...");
     // send the HTTP PUT request:
     client.print("GET /?");
-    client.print("nodeid=");client.print(payload.nodeID);
-    client.print("&temp=");client.print(payload.temp);
+    client.print("temp=");client.print(payload.temp);
     client.print("&humi=");client.print(payload.humi);
     client.print("&israin=");client.print(payload.israin);
     client.println(" HTTP/1.1");
