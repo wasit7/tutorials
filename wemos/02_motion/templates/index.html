@@ -4,9 +4,9 @@
   	<title>Bootstrap Example</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
   	<style>
 	  #mylist { list-style-type: none; margin: 0; padding: 0; }
       #mylist li { padding: 5px 10px; }
@@ -17,7 +17,7 @@
   	<h2>Hello, {{name}}</h2>
   	<h3>Message:{{message}}</h3>
     <ul id="mylist"></ul>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="{{ url_for('static', filename='socket.io-1.2.0.js') }}"></script>
 
     <script>
       var socket = io();
