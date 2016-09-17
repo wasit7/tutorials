@@ -15,16 +15,22 @@
   </head>
   <body>
   	<h2>Hello, {{name}}</h2>
-  	<h3>Message:{{message}}</h3>
-    <ul id="mylist"></ul>
+  	<p>Message:{{message}}<p>
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong>Current data</strong></div>
+      <div class="panel-body">
+        <ul id="mylist"></ul>
+      </div>
+    </div>    
+    
     <script src="{{ url_for('static', filename='socket.io-1.2.0.js') }}"></script>
 
     <script>
       var socket = io();
-      //var socket = io.connect('http://192.168.1.36:5000');
       socket.on('s2c', function(msg){
-      	console.log(msg)
-        $('#mylist').append($('<li>').text(msg));
+      	//console.log(msg)
+        $('#mylist').prepend($('<li>').text(msg));
+        $('strong').text(msg);
       });
     </script>
   </body>
