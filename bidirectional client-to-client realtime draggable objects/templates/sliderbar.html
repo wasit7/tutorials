@@ -1,0 +1,19 @@
+<html>
+<body>
+<input type="range" min="0" max="100" value="0"  oninput="showValue(this.value)" />
+<span id="range">0</span>
+<script src="{{ url_for('static', filename='socket.io-1.2.0.js') }}"></script>
+<script type="text/javascript" charset="utf-8">
+var socket = io();
+function showValue(newValue){
+	document.getElementById("range").innerHTML=newValue;
+	json=[ 
+		{'x':newValue,'y': newValue},
+		{'x': parseFloat(newValue)*0.5,'y': parseFloat(newValue)*0.5 },
+	];
+	socket.emit('c2s',  json);
+	//socket.emit('s2c', { for: 'everyone' });
+}
+</script>
+</body>
+</html>

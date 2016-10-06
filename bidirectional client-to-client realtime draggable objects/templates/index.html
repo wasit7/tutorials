@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <style>
+    #mylist { list-style-type: none; margin: 0; padding: 0; }
+      #mylist li { padding: 5px 10px; }
+      #mylist li:nth-child(odd) { background: #99f; }
+    </style>
+  </head>
+  <body>
+    <h2>Hello, {{name}}</h2>
+    <p>Message:{{message}}<p>
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong>Current data</strong></div>
+      <div class="panel-body">
+        <ul>
+          <li id="mylist"> text </li>
+        </ul>
+      </div>
+    </div>    
+    
+    <script src="{{ url_for('static', filename='socket.io-1.2.0.js') }}"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      var socket = io();
+      socket.on('s2c', function(json){
+        //console.log(msg)
+        $('#mylist').text(json[0].x);
+      });
+    </script>
+  </body>
+</html>

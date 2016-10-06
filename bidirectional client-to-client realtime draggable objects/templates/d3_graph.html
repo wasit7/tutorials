@@ -1,0 +1,77 @@
+<html>
+<head>
+	<style type="text/css">
+	svg {
+	  border: solid 1px #aaa;
+	}
+	.active {
+	  stroke: #000;
+	  stroke-width: 2px;
+	}
+	</style>
+	<script src="{{ url_for('static', filename='d3.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='socket.io-1.2.0.js') }}"></script>
+</head>
+<body>
+
+<script>
+var socket = io();
+
+var svg = d3.select("body")
+	.append("svg")
+	.attr("width", 400)
+	.attr("height", 300);
+
+var circles;
+var isdrag=0;
+
+function dragstarted(d) {
+  d3.select(this).raise().classed("active", true);
+  isdrag=1;
+}
+
+function dragged(d) {
+  d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
+  console.log(svg.selectAll("circle").data());
+  circles
+		.attr("cx",function (d) { return d.x; })
+		.attr("cy", function (d) { return d.y; } )
+		.attr("r", 20)
+		.style("fill", "green");
+  socket.emit('c2s',  svg.selectAll("circle").data() );
+}
+
+function dragended(d) {
+  d3.select(this).classed("active", false);
+  isdrag=0;
+}
+
+socket.on('s2c', function(json){
+	if (isdrag==0){
+		circles = svg.selectAll("circle").data(json)
+
+		circles.enter()
+			.append("circle")
+			.attr("cx",function (d) { return d.x; })
+			.attr("cy", function (d) { return d.y; } )
+			.attr("r", 20)
+			.call(d3.drag()
+		        .on("start", dragstarted)
+		        .on("drag", dragged)
+		        .on("end", dragended));
+
+		circles
+			.attr("cx",function (d) { return d.x; })
+			.attr("cy", function (d) { return d.y; } )
+			.attr("r", 20)
+			.style("fill", "green");
+
+		circles.exit()
+			.transition().duration(1000)
+			.attr("r", 0)
+			.remove();
+	}
+});
+</script>
+</body>
+</html>
