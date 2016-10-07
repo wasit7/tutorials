@@ -27,6 +27,10 @@ def graph():
 def drag():
 	return render_template('d3_drag.html')
 
+@app.route("/click")
+def scale():
+	return render_template('d3_click.html')
+
 @app.route("/alarm")
 def alarm():
 	log= str(datetime.now()) + ": Alarm!!!"
