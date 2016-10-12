@@ -3,14 +3,13 @@
 #include <RF24Network.h>
 #include <RF24.h>
 
+void printIPAddress();
+void listenRF24();
 //////////////////ethernet setting
 byte mac[] = {
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xE0
 };
 
-//IPAddress ip(192, 168, 1, 177);
-//int port = 5000;
-//char server[] = "192.168.1.3";
 int port = 80;
 char server[] = "www.scituweather.appspot.com";
 //IPAddress server(192,168,1,2);
@@ -21,7 +20,7 @@ unsigned long lastConnectionTime = 0;             // last time you connected to 
 const unsigned long postingInterval = 1000L; // delay between updates, in milliseconds
 
 //////////////////nrf24 setting
-RF24 radio(7,8);                // nRF24L01(+) radio attached using Getting Started board 
+RF24 radio(7,8);                //radio(ce,cs)
 RF24Network network(radio);      // Network uses that radio
 const uint16_t this_node = 00;    // Address of our node in Octal format ( 04,031, etc)
 const uint16_t other_node = 01;   // Address of the other node in Octal format
@@ -64,43 +63,25 @@ void setup() {
 }
 
 void loop() {
-  ///////////////nrf24
-  switch (Ethernet.maintain())
-  {
+  switch (Ethernet.maintain()){
     case 1:
-      //renewed fail
-      Serial.println("Error: renewed fail");
+      Serial.println(">> Error: renewed fail");
       break;
-
     case 2:
-      //renewed success
-      Serial.println("Renewed success");
-
-      //print your local IP address:
+      Serial.println(">> Renewed success");
       printIPAddress();
       break;
-
     case 3:
-      //rebind fail
-      Serial.println("Error: rebind fail");
+      Serial.println(">> Error: rebind fail");
       break;
-
     case 4:
-      //rebind success
-      Serial.println("Rebind success");
-
-      //print your local IP address:
+      Serial.println(">> Rebind success");
       printIPAddress();
       break;
-
     default:
       listenRF24();
       break;
-
   }  
-  
-
-
 }
 
 void listenRF24(){
@@ -108,16 +89,18 @@ void listenRF24(){
   while ( network.available() ) {     // Is there anything ready for us?
     RF24NetworkHeader header;        // If so, grab it and print it out
     network.read(header,&payload,sizeof(payload));
-    Serial.print("Received packet from");
-    httpRequest(payload);
-    
+    Serial.println("--------begin-----------");
+    Serial.println("Received packet from");
+    Serial.print("ID: ");
     Serial.print(payload.nodeID);
-    Serial.print("temp: ");
+    Serial.print(", temp: ");
     Serial.print(payload.temp);
-    Serial.print("humi: ");
+    Serial.print(", humi: ");
     Serial.print(payload.humi);
-    Serial.print("israin: ");
-    Serial.println(payload.israin);   
+    Serial.print(", israin: ");
+    Serial.println(payload.israin);
+    httpRequest(payload);
+    Serial.println("---------end------------");
   }
   
   // if there's incoming data from the net connection.
@@ -127,6 +110,7 @@ void listenRF24(){
     char c = client.read();
     Serial.write(c);
   }
+  
 }
 
 void printIPAddress()
@@ -137,7 +121,6 @@ void printIPAddress()
     Serial.print(Ethernet.localIP()[thisByte], DEC);
     Serial.print(".");
   }
-
   Serial.println();
 }
 
@@ -149,7 +132,7 @@ void httpRequest(payload_t& payload) {
 
   // if there's a successful connection:
   if (client.connect(server, port)) {
-    Serial.println("connecting...");
+    Serial.println("http connecting...");
     // send the HTTP PUT request:
     client.print("GET /?");
     client.print("nodeid=");client.print(payload.nodeID);

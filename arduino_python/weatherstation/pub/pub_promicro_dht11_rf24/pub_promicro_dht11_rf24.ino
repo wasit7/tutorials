@@ -10,16 +10,16 @@
 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
 DHT dht(DHTPIN, DHTTYPE);
 
-#define mynodeID 7001
+const unsigned long interval = 300000; //ms  // How often to send 'hello world to the other unit
+const uint16_t this_node = 01;       // Address of our node in Octal format
 
-RF24 radio(18,19);                    // nRF24L01(+) radio attached using Getting Started board 
-
+RF24 radio(18,19);                   // radio(ce,cs)
 RF24Network network(radio);          // Network uses that radio
 
-const uint16_t this_node = 01;        // Address of our node in Octal format
+
 const uint16_t gateway_node = 00;       // Address of the other node in Octal format
 
-const unsigned long interval = 2000; //ms  // How often to send 'hello world to the other unit
+
 
 unsigned long last_sent;             // When did we last send?
 unsigned long packets_sent;          // How many have we sent already
@@ -49,32 +49,32 @@ void setup(void)
 }
 
 void loop() {
-  payload.nodeID = mynodeID;
+  payload.nodeID = this_node;
   payload.temp = dht.readTemperature();// Read temperature as Celsius (the default)
   payload.humi = dht.readHumidity();
   payload.israin= digitalRead(ISRAINPIN)==0;  
   if(payload.temp==payload.temp && payload.humi==payload.humi){
     bool ok=0;
     Serial.println("Sending the package!!");
-    do{
-      network.update();                          // Check the network regularly
-      RF24NetworkHeader header(gateway_node);
-      ok=network.write(header,&payload,sizeof(payload));
-      Serial.print("send from: ");
-      
-      Serial.print(payload.nodeID);
-      Serial.print(" temp: ");
-      Serial.print(payload.temp);
-      Serial.print(" humi: ");
-      Serial.print(payload.humi);
-      Serial.print(" israin: ");
-      Serial.print(payload.israin);
-      
-      Serial.print(" ok:");
-      Serial.println(ok);
-      delay(1000);
-    }while(!ok);
-    delay(1000);//300000
+//    do{
+    network.update();                          // Check the network regularly
+    RF24NetworkHeader header(gateway_node);
+    ok=network.write(header,&payload,sizeof(payload));
+    Serial.print("send from: ");
+    
+    Serial.print(payload.nodeID);
+    Serial.print(" temp: ");
+    Serial.print(payload.temp);
+    Serial.print(" humi: ");
+    Serial.print(payload.humi);
+    Serial.print(" israin: ");
+    Serial.print(payload.israin);
+    
+    Serial.print(" ok:");
+    Serial.println(ok);
+//    delay(3000);//delay_nrf_attempt
+//    }while(!ok);
+    delay(interval);//period
   }
   else{
     Serial.println("Failed to read from DHT sensor!");
