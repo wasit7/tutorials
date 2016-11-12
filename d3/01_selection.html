@@ -7,19 +7,32 @@
 <body>
 
 <h1 id="my_title">This is a Heading</h1>
+<p style="color:blue;">This is a paragraph.</p>
+<p>Another paragraph.</p>
+<p>Hello D3!</p>
 <p>This is a paragraph.</p>
 <p>Another paragraph.</p>
 <p>Hello D3!</p>
 <script>
 	d3.selectAll("p").style("color", function(d, i) {
-  		return i % 2 ? "#fff" : "#00e";
+		console.log(d);
+		if(i%3==0){
+			return "#f00";
+		}
+  		if(i%3==1){
+			return "#0f0";
+		}
+		if(i%3==2){
+			return "#00f";
+		}
 	});
 	d3.select("body").style("background-color", "black");
-	d3.select("#my_title").style("color", "blue");
+	d3.select("#my_title").style("color", "purple");
 	d3.selectAll("p")
-    .data([4, 8])
+    .data([4, 8, 12, 16, 20, 24])
     .style("font-size", function(d) { return d + "px"; });
     console.log(d3.selectAll("p").data());
+
 </script>
 </body>
 </html>

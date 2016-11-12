@@ -13,9 +13,9 @@
     //.styleTween("background-color", function() { return d3.interpolate("yellow", "red");
     d3.select("body")
     .style("background-color", "green") // make the body green
-  .transition()
+  .transition().duration(3000)
     .style("background-color", "red") // then transition to red
-   .transition()
+   .transition().duration(3000)
     .style("background-color", "blue"); // then transition to red
 </script>
 </body>
