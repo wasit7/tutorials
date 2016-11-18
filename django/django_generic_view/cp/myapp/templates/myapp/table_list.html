@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+	<h1>Articles</h1>
+	<a href={% url 'table_create' %}> create </a>
+	<ul>
+	{% for object in object_list %}
+		<br>
+		<li><a href={% url 'table_update' object.id %}>id:{{ object.id }}</a></li>
+	  	<li>BigIntegerField: {{ object.BigIntegerField }}</li>
+		<li>BooleanField: {{ object.BooleanField }}</li>
+		<li>CharField: {{ object.CharField }}</li>
+		<li>DateField: {{ object.DateField }}</li>
+		<li>DateTimeField: {{ object.DateTimeField }}</li>
+		<li>DecimalField: {{ object.DecimalField }}</li>
+		<li>EmailField: {{ object.EmailField }}</li>
+		<li>FileField: {{ object.FileField }}</li>
+		<li>FilePathField: {{ object.FilePathField }}</li>
+		<li>FloatField: {{ object.FloatField }}</li>
+		<li>ForeignKey: {{ object.ForeignKey }}</li>
+		<li>ImageField: {{ object.ImageField }}</li>
+		<li>IntegerField: {{ object.IntegerField }}</li>
+		<li>GenericIPAddressField: {{ object.GenericIPAddressField }}</li>
+		<li>NullBooleanField: {{ object.NullBooleanField }}</li>
+		<li>PositiveIntegerField: {{ object.PositiveIntegerField }}</li>
+		<li>PositiveSmallIntegerField: {{ object.PositiveSmallIntegerField }}</li>
+		<li>SlugField: {{ object.SlugField }}</li>
+		<li>SmallIntegerField: {{ object.SmallIntegerField }}</li>
+		<li>TextField: {{ object.TextField }}</li>
+		<li>TimeField: {{ object.TimeField }}</li>
+		<li>URLField: {{ object.URLField }}</li>
+		<li>x: {{ object.x }}</li>
+		<li>y: {{ object.y }}</li>
+	{% empty %}
+	    <li>No articles yet.</li>
+	{% endfor %}
+	</ul>
+</div>
+
+
+
+
+</body>
+</html>

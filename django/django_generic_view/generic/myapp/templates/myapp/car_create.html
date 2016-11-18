@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+	<form action="" method="post">{% csrf_token %}
+    	{{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+</div>
+
+
+
+
+</body>
+</html>

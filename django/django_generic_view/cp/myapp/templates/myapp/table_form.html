@@ -1,0 +1,30 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+    <div class="col-md-9">
+      <h4>Table</h4>
+      <div class="well">
+        {% crispy form %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

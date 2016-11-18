@@ -1,0 +1,35 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+	<!--form action="" method="post">{% csrf_token %}
+    	{{ form.as_p }}
+    	<button type="submit" class="btn btn-primary">Submit</button>
+	</form-->
+	<div class="row">
+    <div class="col-md-6">
+      <h1>Car</h1>
+      <hr/>
+      <div class="well">
+        {% crispy form %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+	<p>BigIntegerField: {{ object.BigIntegerField }}</p>
+	<p>BooleanField: {{ object.BooleanField }}</p>
+	<p>CharField: {{ object.CharField }}</p>
+	<p>DateField: {{ object.DateField }}</p>
+	<p>DateTimeField: {{ object.DateTimeField }}</p>
+	<p>DecimalField: {{ object.DecimalField }}</p>
+	<p>EmailField: {{ object.EmailField }}</p>
+	<p>FileField: {{ object.FileField }}</p>
+	<p>FilePathField: {{ object.FilePathField }}</p>
+	<p>FloatField: {{ object.FloatField }}</p>
+	<p>ForeignKey: {{ object.ForeignKey }}</p>
+	<p>ImageField: {{ object.ImageField }}</p>
+	<p>IntegerField: {{ object.IntegerField }}</p>
+	<p>GenericIPAddressField: {{ object.GenericIPAddressField }}</p>
+	<p>NullBooleanField: {{ object.NullBooleanField }}</p>
+	<p>PositiveIntegerField: {{ object.PositiveIntegerField }}</p>
+	<p>PositiveSmallIntegerField: {{ object.PositiveSmallIntegerField }}</p>
+	<p>SlugField: {{ object.SlugField }}</p>
+	<p>SmallIntegerField: {{ object.SmallIntegerField }}</p>
+	<p>TextField: {{ object.TextField }}</p>
+	<p>TimeField: {{ object.TimeField }}</p>
+	<p>URLField: {{ object.URLField }}</p>
+	<p>x: {{ object.x }}</p>
+	<p>y: {{ object.y }}</p>
+</div>
+
+
+
+
+</body>
+</html>
