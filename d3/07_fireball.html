@@ -41,6 +41,7 @@ function draw(){
 		.data(data)
 
 	circles
+		.transition().duration(10000)
 		.attr("fill","#f90")
 		.attr("r",10)
 		.attr("fill-opacity", function(d,i) { 
@@ -57,7 +58,7 @@ function draw(){
 		.attr("fill","#aa0")
 		
 
-	circles.exit().transition().duration(300)
+	circles.exit().transition().duration(3000)
 		.attr("r",0)
 		.remove();
 }

@@ -8,8 +8,8 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Field, Fieldset, Button, HTML, ButtonHolder,Div
 from crispy_forms.bootstrap import FormActions, TabHolder, Tab
-from django.urls import reverse
-
+#from django.urls import reverse
+from django.core.urlresolvers import reverse
 class TableDetail(DetailView):
 	model = Table
 class TableList(ListView):

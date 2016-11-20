@@ -16,10 +16,30 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from myapp.views import TableDetail, TableList, TableCreate, TableUpdate
+from myapp.models import Table
+from django.conf.urls import url, include
+from rest_framework import routers, viewsets, serializers
+
+
+class TableSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Table
+        fields=('__all__')
+
+class TableViewSet(viewsets.ModelViewSet):
+    queryset = Table.objects.all()
+    serializer_class = TableSerializer
+
+router = routers.DefaultRouter()
+router.register(r'tables', TableViewSet)
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^table_detail/(?P<pk>\d+)/', TableDetail.as_view(), name='table_detail'),
-    url(r'^table_list/', TableList.as_view(), name='table_list'),
-    url(r'^table_update/(?P<pk>\d+)/', TableUpdate.as_view(), name='table_update'),
-    url(r'^table_create/', TableCreate.as_view(), name='table_create'),
+    #url(r'^api/', include(router.urls)),
+    #url(r'^admin/', admin.site.urls),
+    #url(r'^web_table_detail/(?P<pk>\d+)/', TableDetail.as_view(), name='table_detail'),
+    #url(r'^web_table_list/', TableList.as_view(), name='table_list'),
+    #url(r'^web_table_update/(?P<pk>\d+)/', TableUpdate.as_view(), name='table_update'),
+    #url(r'^web_table_create/', TableCreate.as_view(), name='table_create'),
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

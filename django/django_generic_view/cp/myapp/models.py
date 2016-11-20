@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
-
 from django.db import models
+from rest_framework import serializers
 
 class Table(models.Model):
 	BigIntegerField = models.BigIntegerField(blank=True, null=True)
@@ -30,6 +30,7 @@ class Table(models.Model):
 
 	def __unicode__(self):
 		return "%s %s %s"%(self.id, self.x, self.y)
+
 
 class Chair(models.Model):
 	name=models.CharField(max_length=10,blank=True, null=True)
