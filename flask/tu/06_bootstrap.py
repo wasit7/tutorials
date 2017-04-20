@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def show_entries():
-    return render_template('bootstrap.html', name='Wasit')
+    return render_template('home_bootstrap.html', name='Wasit')
 
 # 'ipconfig' to check your pubic ip
 # you have to disable firewall or allow incomming connection to the server

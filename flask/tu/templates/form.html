@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{name}}'s page</title>
+  <title>sign-in</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,33 +12,31 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1>Hello {{name}}</h1>
-  <p>Resize this responsive page to see the effect!</p>
+  <h1>Sign-in</h1>
+  <p>Please sign-in or bruteforce to get password</p>
 </div>
   
 <div class="container">
   <div class="row">
+
+    <div class="col-sm-4"></div>
     <div class="col-sm-4">
-      <div class="form-group">
-        <label for="usr">Name:</label>
-        <input type="text" class="form-control" id="usr">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
-      </div>
-      <input type="submit" class="primary" id="submit">
+      <form action="signin" method="POST" role="form" class="form-horizontal">
+        <div class="form-group">
+          <label for="usr">Username:</label>
+          <input type="text" class="form-control" name="username">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+        <input type="submit" class="primary" id="submit">
+        {{error}}
+      </form>
+
     </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+    
+
   </div>
 </div>
 

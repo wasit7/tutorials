@@ -16,7 +16,7 @@ myhtml = '''
 
 @app.route('/')
 def hello_world():
-    return myhtml.format( name='Somkiat' )
+    return myhtml.format( name='Wasit' )
 
 
 # 'ipconfig' to check your pubic ip
