@@ -6,11 +6,12 @@ def home(uname):
     return render_template('home_bootstrap.html', name=uname)
 
 def valid_login(username, password):
-	pwd={'admin':'qwer1234','wasit':'1234'}
+	pwd={'admin':'45687952','wasit':'1234'}
 	if pwd.get(username,'') !="":
 		return pwd.get(username,'')== password
+
 @app.route('/signin', methods=['GET', 'POST'])
-def myform():
+def signin():
 	if request.method == 'POST':
 		username=request.form.get('username','')
 		password=request.form.get('password','')
@@ -20,12 +21,12 @@ def myform():
 		else:
 			return render_template('form.html',error='Invalid username/password')
 	else:
-		return render_template('form.html',error='')
+		return render_template('form.html', error='')
 
 # 'ipconfig' to check your pubic ip
 # you have to disable firewall or allow incomming connection to the server
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
 
 ## arguments passing summary
 """
