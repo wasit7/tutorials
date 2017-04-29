@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="{{ url_for('static', filename='socket.io-1.2.0.js') }}"></script>
+</head>
+<body>
+<script type="text/javascript">
+var socket = io();
+var svg = d3.select("body").append("svg").attr({
+			width: 1000,
+			height: 700
+			});
+
+var circleAttrs = {
+          cx: function(d) { return d.x; },
+          cy: function(d) { return d.y; },
+          r: 10
+      };
+
+var data=[];
+svg.on("click", function() {
+	var coords = d3.mouse(this);
+	var center={"x":coords[0], "y":coords[1]};
+	data.push(center);
+	console.log(data);
+	socket.emit('secret_room',  data);
+
+	svg.selectAll("circle")  // For new circle, go through the update process
+	.data(data)
+	.enter()
+	.append("circle")
+	.attr(circleAttrs)  // Get attributes from circleAttrs var
+});
+</script>
+
+</body>
+</html>
